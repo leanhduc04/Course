@@ -6,8 +6,10 @@ type ExtendedCustomColors =
   | 'tertiary'
   | 'accent1'
   | 'accent2'
+  | 'light'
   | 'dark'
   | 'darkText'
+  | 'white'
   | DefaultMantineColor;
 
 declare module '@mantine/core' {

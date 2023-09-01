@@ -7,4 +7,5 @@ export const color = {
   light: ['#F9F9F9', '#EAEAEA', '#D5D4D4'],
   dark: ['#161616'],
   darkText: ['#172239', '#6D6D78'],
+  white: ['#FFFFFF'],
 };

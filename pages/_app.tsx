@@ -4,7 +4,7 @@ import { MantineProvider, ColorScheme } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 
 import { Montserrat } from 'next/font/google';
-import { color } from '@/utils/Color/color';
+import { color } from '../src/utils/Color/color';
 
 const montserrat = Montserrat({
   weight: ['400', '600'],
