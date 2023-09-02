@@ -1,21 +1,19 @@
 import { Group, Stack, Text, useMantineTheme } from '@mantine/core';
 import BaseLayout from '../containers/BaseLayout';
 import Title from '../components/MantineCores/Title';
-import Search from '../components/MyComponents/Search';
-import LinkIcon from '../components/MyComponents/LinkIcon';
-import IconBell from '../assets/Icon/IconBell';
 import RightLayout from '../containers/RightLayout';
-import CardLesson from '../components/MyComponents/CardLesson';
 import GroupLinkIcon from '../components/MyComponents/GroupLinkIcon';
 import Tabs from '../containers/Tabs';
-import { dataLesson } from '../constants/dataLesson.constant';
+import HistoryBack from '../components/MyComponents/HistoryBack';
+import CardNotification from '../components/MyComponents/CardNotification';
+import { dataNotification } from '../constants/dataNotification';
 
-export default function Home() {
+export default function Notification() {
   const theme = useMantineTheme();
 
   return (
     <BaseLayout>
-      <Stack spacing={48}>
+      <Stack spacing={48} sx={{ [theme.fn.smallerThan('1440')]: { display: 'none' } }}>
         <Group position="apart">
           <Stack spacing={8}>
             <Text fw={400} fz={20} lh="24px">
@@ -32,15 +30,10 @@ export default function Home() {
           <Tabs />
         </Stack>
       </Stack>
-      <Stack spacing={48} sx={{ [theme.fn.smallerThan('1440')]: { display: 'none' } }}>
-        <Group spacing={32}>
-          <Search />
-          <LinkIcon href="/notification">
-            <IconBell />
-          </LinkIcon>
-        </Group>
-        <RightLayout title="Lessons 📖">
-          <CardLesson data={dataLesson} />
+      <Stack spacing={48}>
+        <HistoryBack />
+        <RightLayout title="Notifications 🔔">
+          <CardNotification data={dataNotification} />
         </RightLayout>
       </Stack>
     </BaseLayout>
