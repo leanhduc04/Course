@@ -2,7 +2,7 @@ import React from 'react';
 
 import { SimpleGrid, useMantineTheme } from '@mantine/core';
 
-import Navbar from './Navbar';
+import Navbar from '../components/MyComponents/Navbar';
 
 interface BaseLayoutProps {
   children: React.ReactNode;
@@ -20,6 +20,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
         gridTemplateColumns: '304px 1fr',
         padding: '64px 64px 0',
         [theme.fn.smallerThan('1440')]: {
+          width: 768,
           gridTemplateColumns: '120px 1fr',
           padding: '48px 48px 0',
           gap: 62,

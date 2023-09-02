@@ -43,11 +43,11 @@ export default function Navbar() {
         sx={{
           zIndex: 0,
           gap: 32,
-          paddingBottom: 64,
+
           width: 304,
           border: 'none',
           justifyContent: 'space-between',
-          [theme.fn.smallerThan('1440')]: { paddingBottom: 48, width: 120 },
+          [theme.fn.smallerThan('1440')]: { width: 120 },
         }}
       >
         <Stack spacing={32}>

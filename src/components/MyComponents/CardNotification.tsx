@@ -1,5 +1,4 @@
 import { Center, Group, Highlight, Stack, Text, useMantineTheme } from '@mantine/core';
-import React from 'react';
 
 interface Data {
   title: string;

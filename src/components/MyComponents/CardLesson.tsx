@@ -1,5 +1,5 @@
-import { Center, Group, Progress, Stack, Text, useMantineTheme } from '@mantine/core';
-import React from 'react';
+import { Center, Group, Stack, Text, useMantineTheme } from '@mantine/core';
+import Progress from './Progress';
 
 interface Data {
   title: string;
@@ -51,29 +51,7 @@ export default function CardLesson({ data }: cardLessonProps) {
                 {item.des}
               </Text>
             </Stack>
-            <Group position="apart">
-              <Progress
-                value={item.valueProgress}
-                styles={{
-                  root: {
-                    background: theme.colors.light[1],
-
-                    width: 198,
-
-                    borderRadius: 4,
-                    border: `1px solid ${theme.colors.light[1]}`,
-
-                    [theme.fn.smallerThan('1440')]: {
-                      width: 298,
-                    },
-                  },
-                  bar: { background: `${item.colorProgress}` },
-                }}
-              />
-              <Text fw={500} fz={12} lh="16px" c={theme.colors.darkText[0]}>
-                {item.valueProgress}%
-              </Text>
-            </Group>
+            <Progress value={item.valueProgress} color={item.colorProgress} />
           </Stack>
         </Group>
       ))}

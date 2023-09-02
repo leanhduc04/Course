@@ -1,5 +1,4 @@
 import { Card, Text, useMantineTheme } from '@mantine/core';
-import React from 'react';
 
 import NextImage from './NextImage';
 

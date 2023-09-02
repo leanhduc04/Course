@@ -40,12 +40,16 @@ export default function Search({ ...props }: TextInputProps) {
               fontWeight: 400,
               lineHeight: '24px',
             },
+
+            ':focus-within': {
+              border: `2px solid ${theme.colors.secondary}`,
+            },
           },
 
           icon: {
             width: 24,
             marginLeft: 12,
-            color: theme.colors.Neutral[4],
+            color: theme.colors.darkText[0],
 
             svg: {
               width: 24,

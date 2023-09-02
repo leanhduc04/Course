@@ -3,7 +3,6 @@ import { Center, Chip, Stack, Text, useMantineTheme } from '@mantine/core';
 interface Data {
   icon: any;
   title: string;
-  color: string;
 }
 
 interface cardSelectProps {
@@ -30,7 +29,7 @@ export default function CardSelect({ data }: cardSelectProps) {
 
               height: 130,
 
-              padding: 10,
+              padding: 0,
 
               fontWeight: 400,
               fontSize: 14,
@@ -47,18 +46,18 @@ export default function CardSelect({ data }: cardSelectProps) {
                 color: theme.colors.darkText[0],
                 fontWeight: 600,
 
-                padding: 10,
+                padding: 0,
 
                 div: {
                   'div: first-of-type': {
-                    background: `${item.color}`,
+                    background: theme.colors.accent1,
                     border: 'none',
                   },
                 },
               },
 
               '&[data-checked]:not([data-disabled])': {
-                border: `2px solid ${item.color}`,
+                border: `2px solid ${theme.colors.accent1}`,
               },
             },
 
@@ -67,7 +66,7 @@ export default function CardSelect({ data }: cardSelectProps) {
             },
           }}
         >
-          <Stack spacing={16} align="center">
+          <Stack spacing={16} align="center" p={10}>
             <Center
               w={60}
               h={60}
