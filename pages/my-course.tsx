@@ -1,9 +1,9 @@
-import Home from '../src/pages/Home';
+import MyCourse from '../src/pages/MyCourse';
 
 export default function index() {
   return (
     <>
-      <Home />
+      <MyCourse />
     </>
   );
 }

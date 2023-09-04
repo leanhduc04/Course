@@ -1,9 +1,9 @@
-import Home from '../src/pages/Home';
+import Search from '../src/pages/Search';
 
 export default function index() {
   return (
     <>
-      <Home />
+      <Search />
     </>
   );
 }

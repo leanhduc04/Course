@@ -2,9 +2,10 @@ import { Chip as MantineChip, ChipProps, useMantineTheme } from '@mantine/core';
 
 interface chipProps extends ChipProps {
   color: string;
+  widthChip: any;
 }
 
-export default function Chip({ color, ...props }: chipProps) {
+export default function Chip({ widthChip, color, ...props }: chipProps) {
   const theme = useMantineTheme();
 
   return (
@@ -12,8 +13,8 @@ export default function Chip({ color, ...props }: chipProps) {
       {...props}
       styles={{
         root: {
-          width: 'fit-content',
           height: 64,
+          width: widthChip,
 
           display: 'flex',
         },
@@ -23,12 +24,10 @@ export default function Chip({ color, ...props }: chipProps) {
           color: theme.colors.darkText[1],
 
           height: 64,
+          width: '100%',
 
           display: 'flex',
           justifyContent: 'center',
-
-          paddingLeft: 12,
-          paddingRight: 12,
 
           fontWeight: 400,
           fontSize: 20,
@@ -46,8 +45,7 @@ export default function Chip({ color, ...props }: chipProps) {
             fontWeight: 600,
             lineHeight: '32px',
 
-            paddingLeft: 12,
-            paddingRight: 12,
+            width: '100%',
           },
 
           '&[data-checked]:not([data-disabled])': {

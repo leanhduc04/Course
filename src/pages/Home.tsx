@@ -1,9 +1,6 @@
-import { Group, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Box, Group, Stack, Text, useMantineTheme } from '@mantine/core';
 import BaseLayout from '../containers/BaseLayout';
 import Title from '../components/MantineCores/Title';
-import Search from '../components/MyComponents/Search';
-import LinkIcon from '../components/MyComponents/LinkIcon';
-import IconBell from '../assets/Icon/IconBell';
 import RightLayout from '../containers/RightLayout';
 import CardLesson from '../components/MyComponents/CardLesson';
 import GroupLinkIcon from '../components/MyComponents/GroupLinkIcon';
@@ -23,7 +20,9 @@ export default function Home() {
             </Text>
             <Title>John Smith 👋</Title>
           </Stack>
-          <GroupLinkIcon />
+          <Box sx={{ display: 'none', [theme.fn.smallerThan('1440')]: { display: 'flex' } }}>
+            <GroupLinkIcon />
+          </Box>
         </Group>
         <Stack spacing={32}>
           <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
@@ -33,12 +32,9 @@ export default function Home() {
         </Stack>
       </Stack>
       <Stack spacing={48} sx={{ [theme.fn.smallerThan('1440')]: { display: 'none' } }}>
-        <Group spacing={32}>
-          <Search />
-          <LinkIcon href="/notification">
-            <IconBell />
-          </LinkIcon>
-        </Group>
+        <Stack align="flex-end">
+          <GroupLinkIcon />
+        </Stack>
         <RightLayout title="Lessons 📖">
           <CardLesson data={dataLesson} />
         </RightLayout>

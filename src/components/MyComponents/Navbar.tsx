@@ -14,7 +14,7 @@ const navbarData = [
   { id: 1, href: '/', label: 'Home', icon: IconHome },
   {
     id: 2,
-    href: '/my-courses',
+    href: '/my-course',
     label: 'My Courses',
     icon: IconCourse,
   },
@@ -42,7 +42,6 @@ export default function Navbar() {
       <MantineNavbar
         sx={{
           zIndex: 0,
-          gap: 32,
 
           width: 304,
           border: 'none',

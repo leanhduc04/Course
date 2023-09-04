@@ -1,9 +1,9 @@
-import Home from '../src/pages/Home';
+import Lesson from '../src/pages/Lesson';
 
 export default function index() {
   return (
     <>
-      <Home />
+      <Lesson />
     </>
   );
 }

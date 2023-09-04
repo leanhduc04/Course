@@ -3,6 +3,7 @@ import { Center, Chip, Stack, Text, useMantineTheme } from '@mantine/core';
 interface Data {
   icon: any;
   title: string;
+  value: string;
 }
 
 interface cardSelectProps {
@@ -16,6 +17,7 @@ export default function CardSelect({ data }: cardSelectProps) {
     <>
       {data.map((item, index) => (
         <Chip
+          value={item.value}
           key={index}
           styles={{
             root: {

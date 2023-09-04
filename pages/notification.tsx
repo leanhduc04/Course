@@ -1,4 +1,4 @@
-import Notification from '../src/pages/notification';
+import Notification from '../src/pages/Notification';
 
 export default function index() {
   return (

@@ -11,7 +11,7 @@ export default function LinkIcon({ href, children }: linkIconProps) {
   const theme = useMantineTheme();
 
   return (
-    <Link href={href} passHref>
+    <Link href={href}>
       <Center
         w={48}
         h={48}

@@ -2,7 +2,7 @@ import { useForm } from '@mantine/form';
 import { TextInput, TextInputProps, useMantineTheme } from '@mantine/core';
 import IconSearch from '../../assets/Icon/IconSearch';
 
-export default function Search({ ...props }: TextInputProps) {
+export default function SearchInput({ ...props }: TextInputProps) {
   const theme = useMantineTheme();
 
   const form = useForm({
@@ -21,7 +21,7 @@ export default function Search({ ...props }: TextInputProps) {
           input: {
             color: theme.colors.darkText[0],
 
-            width: 310,
+            width: 410,
             height: 48,
             padding: 12,
             border: `1px solid ${theme.colors.light[1]}`,

@@ -9,33 +9,7 @@ import {
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import CardCourse from '../components/MyComponents/CardCourse';
 import { dataCourse } from '../constants/dataCourse.constant';
-import IconCategory from '../assets/Icon/IconCategory';
-import IconStar from '../assets/Icon/IconStar';
-import IconHeart from '../assets/Icon/IconHeart';
-import IconDiscover from '../assets/Icon/IconDiscover';
-
-const dataTabs = [
-  {
-    value: 'new',
-    icon: IconCategory,
-    title: 'New',
-  },
-  {
-    value: 'popular',
-    icon: IconStar,
-    title: 'Popular',
-  },
-  {
-    value: 'free',
-    icon: IconHeart,
-    title: 'Free',
-  },
-  {
-    value: 'pro',
-    icon: IconDiscover,
-    title: 'Pro',
-  },
-];
+import { dataSelect } from '../constants/dataSelect.constant';
 
 export default function Tabs() {
   const theme = useMantineTheme();
@@ -49,7 +23,7 @@ export default function Tabs() {
     ? height - 64 - 80 - 48 - 32 - 32 - 130 - 48
     : height - 48 - 80 - 48 - 32 - 32 - 130 - 48;
 
-  const renderTab = dataTabs.map((item, index) => (
+  const renderTab = dataSelect.map((item, index) => (
     <MantineTabs.Tab key={index} value={item.value}>
       <Stack spacing={16} align="center" p={10}>
         <Center
