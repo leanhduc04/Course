@@ -14,7 +14,7 @@ export default function CardPromotion() {
     >
       <Stack spacing={24} align="center">
         <Center w={64} h={64} sx={{ background: theme.colors.secondary, borderRadius: 20 }}>
-          <IconUser stroke={theme.colors.white[0]} />
+          <IconUser />
         </Center>
         <Stack spacing={8} align="center">
           <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]}>

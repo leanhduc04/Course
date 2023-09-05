@@ -3,11 +3,12 @@ import Link from 'next/link';
 import React from 'react';
 
 interface linkIconProps {
+  smallIcon?: boolean;
   href: string;
   children: React.ReactNode;
 }
 
-export default function LinkIcon({ href, children }: linkIconProps) {
+export default function LinkIcon({ smallIcon, href, children }: linkIconProps) {
   const theme = useMantineTheme();
 
   return (
@@ -18,7 +19,7 @@ export default function LinkIcon({ href, children }: linkIconProps) {
         sx={{
           borderRadius: '50%',
           border: `1px solid ${theme.colors.light[1]}`,
-          svg: { width: 24, height: 24 },
+          svg: { width: smallIcon ? 16 : 24, height: smallIcon ? 16 : 24 },
         }}
       >
         {children}

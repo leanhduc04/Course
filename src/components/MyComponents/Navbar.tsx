@@ -9,6 +9,7 @@ import CardPromotion from './CardPromotion';
 import IconHome from '../../assets/Icon/IconHome';
 import IconCourse from '../../assets/Icon/IconCourse';
 import IconUser from '../../assets/Icon/IconUser';
+import { dataUser } from '../../constants/dataUser.constant';
 
 const navbarData = [
   { id: 1, href: '/', label: 'Home', icon: IconHome },
@@ -51,7 +52,7 @@ export default function Navbar() {
       >
         <Stack spacing={32}>
           <MantineNavbar.Section>
-            <CardUser src="/imgs/avatar.jpg" name="John Smith" email="johnsmith@gmail.com" />
+            <CardUser src={dataUser.src} name={dataUser.name} email={dataUser.email} />
           </MantineNavbar.Section>
           <MantineNavbar.Section>
             <Stack

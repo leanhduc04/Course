@@ -1,4 +1,4 @@
-import { Group, Stack, useMantineTheme } from '@mantine/core';
+import { Group, Stack, Text, useMantineTheme } from '@mantine/core';
 import BaseLayout from '../containers/BaseLayout';
 import Title from '../components/MantineCores/Title';
 import RightLayout from '../containers/RightLayout';
@@ -22,11 +22,14 @@ export default function MyCourse() {
             sx={{ display: 'none', [theme.fn.smallerThan('1440')]: { display: 'flex' } }}
           >
             <GroupLinkIcon />
-            <LinkIcon href="/lesson">
+            <LinkIcon smallIcon href="/lesson">
               <IconRight />
             </LinkIcon>
           </Group>
         </Group>
+        <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
+          Courses 😉
+        </Text>
         <Tabs />
       </Stack>
       <Stack spacing={48} sx={{ [theme.fn.smallerThan('1440')]: { display: 'none' } }}>
