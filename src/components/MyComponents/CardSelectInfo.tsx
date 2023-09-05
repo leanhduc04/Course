@@ -3,40 +3,33 @@ import { Center, Chip, Stack, Text, useMantineTheme } from '@mantine/core';
 interface Data {
   icon: any;
   title: string;
-  value: string;
+  des: string;
+  color: string;
 }
 
 interface cardSelectProps {
   data: Data[];
 }
 
-export default function CardSelect({ data }: cardSelectProps) {
+export default function CardSelectInfo({ data }: cardSelectProps) {
   const theme = useMantineTheme();
 
   return (
     <>
       {data.map((item, index) => (
         <Chip
-          value={item.value}
+          value={item.title}
           key={index}
           styles={{
-            root: {
-              width: 'fit-content',
-              height: 130,
-            },
-
             label: {
               background: 'transparent',
-              color: theme.colors.darkText[1],
 
-              height: 130,
+              height: 240,
+              width: 624,
 
               padding: 0,
 
-              fontWeight: 400,
-              fontSize: 14,
-
-              borderRadius: 40,
+              borderRadius: 32,
               border: `1px solid ${theme.colors.light[1]}`,
 
               ...theme.fn.hover({
@@ -44,21 +37,11 @@ export default function CardSelect({ data }: cardSelectProps) {
               }),
 
               '&[data-checked]': {
-                color: theme.colors.darkText[0],
-                fontWeight: 600,
-
                 padding: 0,
-
-                div: {
-                  'div: first-of-type': {
-                    background: theme.colors.accent1,
-                    border: 'none',
-                  },
-                },
               },
 
               '&[data-checked]:not([data-disabled])': {
-                border: `2px solid ${theme.colors.accent1}`,
+                border: `2px solid ${item.color}`,
               },
             },
 
@@ -67,18 +50,26 @@ export default function CardSelect({ data }: cardSelectProps) {
             },
           }}
         >
-          <Stack spacing={16} align="center" p={10}>
+          <Stack spacing={24} align="center" justify="center" h="100%">
             <Center
               w={60}
               h={60}
               sx={{
+                background: item.color,
                 borderRadius: '50%',
                 border: `1px solid ${theme.colors.light[1]}`,
               }}
             >
               <item.icon />
             </Center>
-            <Text lh="24px">{item.title}</Text>
+            <Stack spacing={8} align="center">
+              <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]}>
+                {item.title}
+              </Text>
+              <Text fw={400} fz={14} lh="24px" c={theme.colors.darkText[0]}>
+                {item.des}
+              </Text>
+            </Stack>
           </Stack>
         </Chip>
       ))}

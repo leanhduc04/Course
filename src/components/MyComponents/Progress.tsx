@@ -1,4 +1,4 @@
-import { Group, Progress as MantineProgress, Text, useMantineTheme } from '@mantine/core';
+import { Progress as MantineProgress, SimpleGrid, Text, useMantineTheme } from '@mantine/core';
 
 interface progressProps {
   value: number;
@@ -9,28 +9,22 @@ export default function Progress({ value, color }: progressProps) {
   const theme = useMantineTheme();
 
   return (
-    <Group position="apart">
+    <SimpleGrid sx={{ gridTemplateColumns: '1fr 40px', alignItems: 'center' }}>
       <MantineProgress
         value={value}
         styles={{
           root: {
             background: theme.colors.light[1],
 
-            width: 198,
-
             borderRadius: 4,
             border: `1px solid ${theme.colors.light[1]}`,
-
-            [theme.fn.smallerThan('1440')]: {
-              width: 298,
-            },
           },
           bar: { background: `${color}` },
         }}
       />
-      <Text fw={500} fz={12} lh="16px" c={theme.colors.darkText[0]}>
+      <Text fw={500} fz={12} lh="16px" c={theme.colors.darkText[0]} ta="right">
         {value}%
       </Text>
-    </Group>
+    </SimpleGrid>
   );
 }

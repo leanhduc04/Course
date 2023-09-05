@@ -39,22 +39,28 @@ export default function Profile() {
             </LinkIcon>
           </Box>
         </Group>
-          <Stack spacing={32} align="center">
-            <NextImage src="/imgs/avatar.jpg" alt="avatar" width={218} height={218} style={{ borderRadius: '50%' }} />
-            <Stack spacing={6}>
-              <Group spacing={0} position="center">
-                <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
-                  {dataUser.name}
-                </Text>
-                <Text fw={600} fz={24} lh="32px">
-                  💯
-                </Text>
-              </Group>
-              <Text fw={400} fz={16} lh="26px" c={theme.colors.darkText[1]} ta="center">
-                {dataUser.email}
+        <Stack spacing={32} align="center">
+          <NextImage
+            src="/imgs/avatar.jpg"
+            alt="avatar"
+            width={218}
+            height={218}
+            style={{ borderRadius: '50%' }}
+          />
+          <Stack spacing={6}>
+            <Group spacing={0} position="center">
+              <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
+                {dataUser.name}
               </Text>
-            </Stack>
+              <Text fw={600} fz={24} lh="32px">
+                💯
+              </Text>
+            </Group>
+            <Text fw={400} fz={16} lh="26px" c={theme.colors.darkText[1]} ta="center">
+              {dataUser.email}
+            </Text>
           </Stack>
+        </Stack>
         <Stack spacing={32}>
           <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
             Settings ⚙️
