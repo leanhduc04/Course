@@ -4,11 +4,7 @@ import { SimpleGrid, useMantineTheme } from '@mantine/core';
 
 import Navbar from '../components/MyComponents/Navbar';
 
-interface BaseLayoutProps {
-  children: React.ReactNode;
-}
-
-export default function BaseLayout({ children }: BaseLayoutProps) {
+export default function BaseLayout({ children }: { children: React.ReactNode }) {
   const theme = useMantineTheme();
 
   return (

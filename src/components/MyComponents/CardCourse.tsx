@@ -20,9 +20,8 @@ export default function CardCourse({ data }: cardCourseProps) {
   return (
     <>
       {data.map((item, index) => (
-        <Link href="/course" style={{ textDecoration: 'none' }}>
+        <Link key={index} href="/course" style={{ textDecoration: 'none' }}>
           <Card
-            key={index}
             p={24}
             w={229}
             h="fit-content"

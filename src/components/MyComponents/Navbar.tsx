@@ -10,6 +10,7 @@ import IconHome from '../../assets/Icon/IconHome';
 import IconCourse from '../../assets/Icon/IconCourse';
 import IconUser from '../../assets/Icon/IconUser';
 import { dataUser } from '../../constants/dataUser.constant';
+import Link from 'next/link';
 
 const navbarData = [
   { id: 1, href: '/', label: 'Home', icon: IconHome },
@@ -74,7 +75,11 @@ export default function Navbar() {
             <CardPromotion />
           </MantineNavbar.Section>
         </Stack>
-        <Button variant="light">Log Out</Button>
+        <Link href="/sign-in">
+          <Button variant="light" w="100%">
+            Log Out
+          </Button>
+        </Link>
       </MantineNavbar>
     </ScrollArea>
   );

@@ -21,6 +21,7 @@ export default function PasswordInput({ ...props }: PasswordInputProps) {
           lineHeight: '24px',
 
           marginBottom: 4,
+          width: '100%',
         },
 
         required: {

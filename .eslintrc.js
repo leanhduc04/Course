@@ -1,9 +1,6 @@
 module.exports = {
   extends: [
-    'mantine',
-    'plugin:@next/next/recommended',
-    'plugin:jest/recommended',
-    'plugin:storybook/recommended',
+    '@mantine/eslint-config'
   ],
   plugins: ['testing-library', 'jest'],
   overrides: [
@@ -17,5 +14,6 @@ module.exports = {
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
+    "@next/next/no-page-custom-font": "off"
   },
 };
