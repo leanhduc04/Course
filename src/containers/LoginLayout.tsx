@@ -27,7 +27,7 @@ export default function LoginLayout({ children }: { children: React.ReactNode })
     >
       <Box
         p={32}
-        pt={50}
+        pt={150}
         sx={{
           display: 'flex',
           border: `1px solid ${theme.colors.light[1]}`,

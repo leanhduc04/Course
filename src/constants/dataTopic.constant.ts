@@ -1,40 +1,31 @@
-import IconCourse from '../assets/Icon/IconCourse';
+import IconChart from '../assets/Icon/IconChart';
+import IconSaved from '../assets/Icon/IconSaved';
+import IconDiscover from '../assets/Icon/IconDiscover';
+import IconWallet from '../assets/Icon/IconWallet';
 
 export const dataTopic = [
   {
-    title: 'jskak',
-    des: 'dầggg2',
-    colorIcon: '#52C3FF',
-    icon: IconCourse,
+    title: 'What is JavaScript?',
+    des: 'JavaScript is one of the most popular languages.',
+    colorIcon: '#FFDFD6',
+    icon: IconDiscover,
   },
   {
-    title: 'jskak',
-    des: 'dầggg2',
+    title: 'Use Cases',
+    des: 'It is often used for front-end web development.',
     colorIcon: '#52C3FF',
-    icon: IconCourse,
+    icon: IconChart,
   },
   {
-    title: 'jskak',
-    des: 'dầggg2',
-    colorIcon: '#52C3FF',
-    icon: IconCourse,
+    title: 'Learning Curve',
+    des: 'JavaScript is a beginner friendly programming language.',
+    colorIcon: '#FFCB57',
+    icon: IconSaved,
   },
   {
-    title: 'jskak',
-    des: 'dầggg2',
-    colorIcon: '#52C3FF',
-    icon: IconCourse,
-  },
-  {
-    title: 'jskak',
-    des: 'dầggg2',
-    colorIcon: '#52C3FF',
-    icon: IconCourse,
-  },
-  {
-    title: 'jskak',
-    des: 'dầggg2',
-    colorIcon: '#52C3FF',
-    icon: IconCourse,
+    title: 'Job Offers',
+    des: 'There are quite a lot of companies looking for developers.',
+    colorIcon: '#FC77A0',
+    icon: IconWallet,
   },
 ];

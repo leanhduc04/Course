@@ -8,7 +8,7 @@ import { color } from '../src/utils/Color/color';
 
 const montserrat = Montserrat({
   weight: ['400', '600'],
-  subsets: ['latin'],
+  subsets: ['vietnamese'],
 });
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {

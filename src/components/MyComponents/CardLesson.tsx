@@ -42,7 +42,7 @@ export default function CardLesson({ data }: cardLessonProps) {
           <Stack spacing={24}>
             <Stack spacing={0}>
               <Text fw={400} fz={14} lh="24px" c={theme.colors.darkText[1]}>
-                -{item.time}
+                {item.time}
               </Text>
               <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]} pt={2} pb={6}>
                 {item.title}

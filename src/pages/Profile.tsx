@@ -1,4 +1,4 @@
-import { Box, Group, ScrollArea, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Box, Center, Group, ScrollArea, Stack, Text, useMantineTheme } from '@mantine/core';
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import BaseLayout from '../containers/BaseLayout';
 import Title from '../components/MantineCores/Title';
@@ -6,13 +6,14 @@ import RightLayout from '../containers/RightLayout';
 import GroupLinkIcon from '../components/MyComponents/GroupLinkIcon';
 import HistoryBack from '../components/MyComponents/HistoryBack';
 import CardAchieve from '../components/MyComponents/CardAchieve';
-import { dataAchieve } from '../constants/dataAchieve.constant';
 import CardSetting from '../components/MyComponents/CardSetting';
-import { dataSetting } from '../constants/dataSetting.constant';
-import { dataUser } from '../constants/dataUser.constant';
 import LinkIcon from '../components/MyComponents/LinkIcon';
 import IconRight from '../assets/Icon/IconRight';
 import NextImage from '../components/MyComponents/NextImage';
+import { dataUser } from '../constants/dataUser.constant';
+import { dataSetting } from '../constants/dataSetting.constant';
+import { dataAchieve } from '../constants/dataAchieve.constant';
+import Badge from '../components/MantineCores/Badge';
 
 export default function Profile() {
   const theme = useMantineTheme();
@@ -40,13 +41,18 @@ export default function Profile() {
           </Box>
         </Group>
         <Stack spacing={32} align="center">
-          <NextImage
-            src="/imgs/avatar.jpg"
-            alt="avatar"
-            width={218}
-            height={218}
-            style={{ borderRadius: '50%' }}
-          />
+          <Center sx={{ position: 'relative' }} h={218}>
+            <NextImage
+              src="/imgs/avatar.jpg"
+              alt="avatar"
+              width={176}
+              height={176}
+              style={{ borderRadius: '50%' }}
+            />
+            <Box sx={{ position: 'absolute', bottom: 0 }}>
+              <Badge>Pro</Badge>
+            </Box>
+          </Center>
           <Stack spacing={6}>
             <Group spacing={0} position="center">
               <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>

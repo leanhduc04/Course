@@ -1,4 +1,4 @@
-import { Center, Group, Highlight, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Center, Highlight, SimpleGrid, Stack, Text, useMantineTheme } from '@mantine/core';
 
 interface Data {
   title: string;
@@ -17,14 +17,17 @@ export default function CardSetting({ data }: cardSettingProps) {
   return (
     <>
       {data.map((item, index) => (
-        <Group
+        <SimpleGrid
           key={index}
           spacing={24}
           p={24}
           w={490}
           h="fit-content"
-          sx={{ borderRadius: 32, border: `1px solid ${theme.colors.light[1]}` }}
-          align="flex-start"
+          sx={{
+            gridTemplateColumns: '64px 1fr',
+            borderRadius: 32,
+            border: `1px solid ${theme.colors.light[1]}`,
+          }}
         >
           <Center w={64} h={64} sx={{ background: `${item.colorIcon}`, borderRadius: '50%' }}>
             <item.icon />
@@ -48,7 +51,7 @@ export default function CardSetting({ data }: cardSettingProps) {
               {item.des}
             </Highlight>
           </Stack>
-        </Group>
+        </SimpleGrid>
       ))}
     </>
   );

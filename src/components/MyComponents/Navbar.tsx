@@ -7,7 +7,7 @@ import Button from '../MantineCores/Button';
 import CardUser from './CardUser';
 import CardPromotion from './CardPromotion';
 import IconHome from '../../assets/Icon/IconHome';
-import IconCourse from '../../assets/Icon/IconCourse';
+import IconSaved from '../../assets/Icon/IconSaved';
 import IconUser from '../../assets/Icon/IconUser';
 import { dataUser } from '../../constants/dataUser.constant';
 import Link from 'next/link';
@@ -18,7 +18,7 @@ const navbarData = [
     id: 2,
     href: '/my-course',
     label: 'My Courses',
-    icon: IconCourse,
+    icon: IconSaved,
   },
   {
     id: 3,
