@@ -4,10 +4,10 @@ import RightLayout from '../containers/RightLayout';
 import GroupLinkIcon from '../components/MyComponents/GroupLinkIcon';
 import CardTopic from '../components/MyComponents/CardTopic';
 import HistoryBack from '../components/MyComponents/HistoryBack';
-import { dataTopic } from '../constants/dataTopic.constant';
 import LinkIcon from '../components/MyComponents/LinkIcon';
 import IconRight from '../assets/Icon/IconRight';
 import Progress from '../components/MyComponents/Progress';
+import { dataTopic } from '../constants/dataTopic.constant';
 
 export default function Course() {
   const theme = useMantineTheme();

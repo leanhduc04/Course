@@ -44,7 +44,7 @@ export default function SignIn() {
                 Login
               </Button>
             </Link>
-            <Link href="/sign-up">
+            <Link href="/sign-up-1">
               <Button variant="light" rightIcon={<IconRight />} w="100%">
                 Sign Up
               </Button>

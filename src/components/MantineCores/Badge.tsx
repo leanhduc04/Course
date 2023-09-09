@@ -16,7 +16,6 @@ export default function Badge({ ...props }: BadgeProps) {
 
           borderRadius: 16,
           border: `3px solid ${theme.colors.white}`,
-
         },
 
         inner: {

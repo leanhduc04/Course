@@ -1,4 +1,4 @@
-import { Center, Group, Highlight, SimpleGrid, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Center, Highlight, SimpleGrid, Stack, Text, useMantineTheme } from '@mantine/core';
 
 interface Data {
   title: string;

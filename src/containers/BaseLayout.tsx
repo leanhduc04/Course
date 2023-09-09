@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { SimpleGrid, useMantineTheme } from '@mantine/core';
-
 import Navbar from '../components/MyComponents/Navbar';
 
 export default function BaseLayout({ children }: { children: React.ReactNode }) {

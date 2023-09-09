@@ -1,6 +1,5 @@
 import IconStar from '../assets/Icon/IconStar';
 
-
 export const dataAchieve = [
   {
     title: 'Quick Learner',

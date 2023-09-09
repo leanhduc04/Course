@@ -95,22 +95,22 @@ export default function Tabs() {
 
       <MantineTabs.Panel value="new">
         <SimpleGrid spacing={32} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-          <CardCourse data={dataCourse} />
+          <CardCourse data={dataCourse.slice(0, 6)} />
         </SimpleGrid>
       </MantineTabs.Panel>
       <MantineTabs.Panel value="popular">
         <SimpleGrid spacing={32} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-          <CardCourse data={dataCourse} />
+          <CardCourse data={dataCourse.slice(3, 9)} />
         </SimpleGrid>
       </MantineTabs.Panel>
       <MantineTabs.Panel value="free">
         <SimpleGrid spacing={32} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-          <CardCourse data={dataCourse} />
+          <CardCourse data={dataCourse.slice(5, 11)} />
         </SimpleGrid>
       </MantineTabs.Panel>
       <MantineTabs.Panel value="pro">
         <SimpleGrid spacing={32} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-          <CardCourse data={dataCourse} />
+          <CardCourse data={dataCourse.slice(7, 13)} />
         </SimpleGrid>
       </MantineTabs.Panel>
     </MantineTabs>

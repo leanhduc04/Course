@@ -55,8 +55,8 @@ export default function Carousel() {
       }}
     >
       <MantineCarousel.Slide>
-        <Stack h="100%" align="center" spacing={50}>
-          <NextImage src="/imgs/avatar.jpg" alt="picture" width={300} height={300} />
+        <Stack h="100%" align="center" spacing={0}>
+          <NextImage src="/imgs/signup1.jpg" alt="picture" width={350} height={350} />
           <Stack spacing={16} align="center">
             <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
               Start Learning{' '}
@@ -71,8 +71,8 @@ export default function Carousel() {
         </Stack>
       </MantineCarousel.Slide>
       <MantineCarousel.Slide>
-        <Stack h="100%" align="center" spacing={50}>
-          <NextImage src="/imgs/avatar.jpg" alt="picture" width={300} height={300} />
+        <Stack h="100%" align="center" spacing={0}>
+          <NextImage src="/imgs/signup2.jpg" alt="picture" width={350} height={350} />
           <Stack spacing={16} align="center">
             <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
               Connect With the{' '}
@@ -87,8 +87,8 @@ export default function Carousel() {
         </Stack>
       </MantineCarousel.Slide>
       <MantineCarousel.Slide>
-        <Stack h="100%" align="center" spacing={50}>
-          <NextImage src="/imgs/avatar.jpg" alt="picture" width={300} height={300} />
+        <Stack h="100%" align="center" spacing={0}>
+          <NextImage src="/imgs/signup3.jpg" alt="picture" width={350} height={350} />
           <Stack spacing={16} align="center">
             <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
               Fully Flexible{' '}

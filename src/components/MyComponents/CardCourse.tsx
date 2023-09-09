@@ -24,7 +24,7 @@ export default function CardCourse({ data }: cardCourseProps) {
           <Card
             p={24}
             w={229}
-            h="fit-content"
+            h={297}
             radius={32}
             sx={{ border: `1px solid ${theme.colors.light[1]}` }}
           >

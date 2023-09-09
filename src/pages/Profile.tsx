@@ -10,10 +10,10 @@ import CardSetting from '../components/MyComponents/CardSetting';
 import LinkIcon from '../components/MyComponents/LinkIcon';
 import IconRight from '../assets/Icon/IconRight';
 import NextImage from '../components/MyComponents/NextImage';
+import Badge from '../components/MantineCores/Badge';
 import { dataUser } from '../constants/dataUser.constant';
 import { dataSetting } from '../constants/dataSetting.constant';
 import { dataAchieve } from '../constants/dataAchieve.constant';
-import Badge from '../components/MantineCores/Badge';
 
 export default function Profile() {
   const theme = useMantineTheme();

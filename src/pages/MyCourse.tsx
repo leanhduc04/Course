@@ -27,7 +27,7 @@ export default function MyCourse() {
             </LinkIcon>
           </Group>
         </Group>
-        <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
+        <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]} pb={16}>
           Courses 😉
         </Text>
         <Tabs />

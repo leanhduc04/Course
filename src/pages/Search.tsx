@@ -17,10 +17,10 @@ import Chip from '../components/MantineCores/Chip';
 import CardSelect from '../components/MyComponents/CardSelect';
 import Button from '../components/MantineCores/Button';
 import IconRight from '../assets/Icon/IconRight';
-import { dataSelect } from '../constants/dataSelect.constant';
-import { dataCourse } from '../constants/dataCourse.constant';
 import LinkIcon from '../components/MyComponents/LinkIcon';
 import IconBell from '../assets/Icon/IconBell';
+import { dataSelect } from '../constants/dataSelect.constant';
+import { dataCourse } from '../constants/dataCourse.constant';
 
 export default function Search() {
   const theme = useMantineTheme();
@@ -46,7 +46,7 @@ export default function Search() {
           </Text>
           <ScrollArea h={heightChildren} styles={{ scrollbar: { display: 'none' } }}>
             <SimpleGrid spacing={32} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-              <CardCourse data={dataCourse} />
+              <CardCourse data={dataCourse.slice(5, 11)} />
             </SimpleGrid>
           </ScrollArea>
         </Stack>

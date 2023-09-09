@@ -6,6 +6,7 @@ export default function CardSelectField({ title }: { title: string }) {
 
   return (
     <Chip
+      value={title}
       styles={{
         root: {
           display: 'flex',
@@ -45,6 +46,10 @@ export default function CardSelectField({ title }: { title: string }) {
 
           '&[data-checked]:not([data-disabled])': {
             border: `2px solid ${theme.colors.secondary}`,
+          },
+
+          [theme.fn.smallerThan('1440')]: {
+            width: 672,
           },
         },
 

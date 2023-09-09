@@ -43,6 +43,10 @@ export default function CardSelectInfo({ data }: cardSelectProps) {
               '&[data-checked]:not([data-disabled])': {
                 border: `2px solid ${item.color}`,
               },
+
+              [theme.fn.smallerThan('1440')]: {
+                width: 672,
+              },
             },
 
             iconWrapper: {
@@ -50,7 +54,7 @@ export default function CardSelectInfo({ data }: cardSelectProps) {
             },
           }}
         >
-          <Stack spacing={24} align="center" justify="center" h="100%">
+          <Stack spacing={24} align="center" justify="center" h="100%" w="100%">
             <Center
               w={60}
               h={60}
