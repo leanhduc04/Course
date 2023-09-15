@@ -1,4 +1,4 @@
-import { Box, Group, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Box, Group, Stack } from '@mantine/core';
 import LoginLayout from '../containers/LoginLayout';
 import HistoryBack from '../components/MyComponents/HistoryBack';
 import Link from 'next/link';
@@ -7,20 +7,18 @@ import IconRight from '../assets/Icon/IconRight';
 import IconEmail from '../assets/Icon/IconEmail';
 import TextInput from '../components/MantineCores/TextInput';
 import PasswordInput from '../components/MantineCores/PasswordInput';
+import Title from '../components/MantineCores/Title';
+import Text from '../components/MantineCores/Text';
 
 export default function SignUp3() {
-  const theme = useMantineTheme();
-
   return (
     <LoginLayout>
       <Stack spacing={48}>
         <Group position="apart" align="flex-start">
           <HistoryBack />
           <Stack spacing={16} align="center">
-            <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
-              Sign Up Now
-            </Text>
-            <Text w={336} fw={400} fz={16} lh="26px" c={theme.colors.darkText[1]} ta="center">
+            <Title order={2}>Sign Up Now</Title>
+            <Text w={336} fz={16} lh="26px" ta="center">
               Please provide us with this information in order to create an account.
             </Text>
           </Stack>

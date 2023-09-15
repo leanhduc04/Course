@@ -1,16 +1,15 @@
 import { Navbar as MantineNavbar, ScrollArea, Stack, useMantineTheme } from '@mantine/core';
-import { useMediaQuery, useViewportSize } from '@mantine/hooks';
-
+import { useViewportSize } from '@mantine/hooks';
+import Link from 'next/link';
 import { NavbarItem } from './NavbarItem';
-
 import Button from '../MantineCores/Button';
 import CardUser from './CardUser';
 import CardPromotion from './CardPromotion';
 import IconHome from '../../assets/Icon/IconHome';
 import IconSaved from '../../assets/Icon/IconSaved';
 import IconUser from '../../assets/Icon/IconUser';
+import useBreakpoint from '../../hooks/useBreakpoint';
 import { dataUser } from '../../constants/dataUser.constant';
-import Link from 'next/link';
 
 const navbarData = [
   { id: 1, href: '/', label: 'Home', icon: IconHome },
@@ -30,11 +29,7 @@ const navbarData = [
 
 export default function Navbar() {
   const theme = useMantineTheme();
-
-  const isDesktop = useMediaQuery('(min-width: 1440px)', true, {
-    getInitialValueInEffect: false,
-  });
-
+  const { isDesktop } = useBreakpoint();
   const { height } = useViewportSize();
 
   const heightChildren = isDesktop ? height - 64 : height - 48;
@@ -44,11 +39,9 @@ export default function Navbar() {
       <MantineNavbar
         sx={{
           zIndex: 0,
-
-          width: 304,
+          width: isDesktop ? 304 : 120,
           border: 'none',
           justifyContent: 'space-between',
-          [theme.fn.smallerThan('1440')]: { width: 120 },
         }}
       >
         <Stack spacing={32}>
@@ -60,26 +53,25 @@ export default function Navbar() {
               spacing={20}
               sx={{
                 padding: 32,
-                borderRadius: 48,
+                borderRadius: isDesktop ? 48 : 32,
                 border: `1px solid ${theme.colors.light[1]}`,
-
-                [theme.fn.smallerThan('1440')]: {
-                  borderRadius: 32,
-                },
               }}
             >
               <NavbarItem data={navbarData} />
             </Stack>
           </MantineNavbar.Section>
-          <MantineNavbar.Section sx={{ [theme.fn.smallerThan('1440')]: { display: 'none' } }}>
-            <CardPromotion />
-          </MantineNavbar.Section>
+          {isDesktop && (
+            <MantineNavbar.Section>
+              <CardPromotion />
+            </MantineNavbar.Section>
+          )}
+
+          <Link href="/sign-in">
+            <Button variant="light" w="100%">
+              Log Out
+            </Button>
+          </Link>
         </Stack>
-        <Link href="/sign-in">
-          <Button variant="light" w="100%">
-            Log Out
-          </Button>
-        </Link>
       </MantineNavbar>
     </ScrollArea>
   );

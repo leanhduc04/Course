@@ -1,8 +1,11 @@
-import { Center, Chip, Group, Text, useMantineTheme } from '@mantine/core';
+import { Center, Chip, Group, useMantineTheme } from '@mantine/core';
 import IconCheck from '../../assets/Icon/IconCheck';
+import useBreakpoint from '../../hooks/useBreakpoint';
+import Title from '../MantineCores/Title';
 
 export default function CardSelectField({ title }: { title: string }) {
   const theme = useMantineTheme();
+  const { isDesktop } = useBreakpoint();
 
   return (
     <Chip
@@ -17,14 +20,11 @@ export default function CardSelectField({ title }: { title: string }) {
           color: theme.colors.darkText[0],
 
           height: 80,
-          width: 624,
+          width: isDesktop ? 624 : 672,
           padding: 24,
 
           display: 'flex',
           alignItems: 'center',
-
-          fontWeight: 600,
-          fontSize: 20,
 
           borderRadius: 24,
           border: `1px solid ${theme.colors.light[1]}`,
@@ -47,10 +47,6 @@ export default function CardSelectField({ title }: { title: string }) {
           '&[data-checked]:not([data-disabled])': {
             border: `2px solid ${theme.colors.secondary}`,
           },
-
-          [theme.fn.smallerThan('1440')]: {
-            width: 672,
-          },
         },
 
         iconWrapper: {
@@ -69,7 +65,7 @@ export default function CardSelectField({ title }: { title: string }) {
         >
           <IconCheck />
         </Center>
-        <Text lh="32px">{title}</Text>
+        <Title order={3}>{title}</Title>
       </Group>
     </Chip>
   );

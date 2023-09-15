@@ -1,7 +1,9 @@
-import { Center, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Center, Stack, useMantineTheme } from '@mantine/core';
 import Button from '../MantineCores/Button';
 import IconRight from '../../assets/Icon/IconRight';
 import IconUser from '../../assets/Icon/IconUser';
+import Title from '../MantineCores/Title';
+import Text from '../MantineCores/Text';
 
 export default function CardPromotion() {
   const theme = useMantineTheme();
@@ -17,10 +19,10 @@ export default function CardPromotion() {
           <IconUser />
         </Center>
         <Stack spacing={8} align="center">
-          <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]}>
+          <Title fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]}>
             Upgrade Plan
-          </Text>
-          <Text fw={400} fz={14} lh="24px" c={theme.colors.darkText[1]} ta="center">
+          </Title>
+          <Text ta="center">
             Become a <span style={{ fontWeight: 600, color: theme.colors.darkText[0] }}>Pro</span>{' '}
             member today and save more than{' '}
             <span style={{ fontWeight: 600, color: theme.colors.darkText[0] }}>75%</span>.

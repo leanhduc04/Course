@@ -1,25 +1,23 @@
-import { Chip as MantineChip, Box, Group, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Chip as MantineChip, Box, Group, Stack } from '@mantine/core';
 import LoginLayout from '../containers/LoginLayout';
 import HistoryBack from '../components/MyComponents/HistoryBack';
-import { dataSelectInfo } from '../constants/dataSelect.constant';
 import Link from 'next/link';
 import Button from '../components/MantineCores/Button';
 import IconRight from '../assets/Icon/IconRight';
 import CardSelectInfo from '../components/MyComponents/CardSelectInfo';
+import Title from '../components/MantineCores/Title';
+import Text from '../components/MantineCores/Text';
+import { dataSelectInfo } from '../constants/dataSelect.constant';
 
 export default function SignUp1() {
-  const theme = useMantineTheme();
-
   return (
     <LoginLayout>
       <Stack spacing={48}>
         <Group position="apart" align="flex-start">
           <HistoryBack />
           <Stack spacing={16} align="center">
-            <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
-              Who Are You?
-            </Text>
-            <Text w={336} fw={400} fz={16} lh="26px" c={theme.colors.darkText[1]} ta="center">
+            <Title order={2}>Who Are You?</Title>
+            <Text w={336} fz={16} lh="26px" ta="center">
               Please tell us a little bit more about yourself and who you are.
             </Text>
           </Stack>

@@ -1,4 +1,7 @@
-import { Center, Chip, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Center, Chip, Stack, useMantineTheme } from '@mantine/core';
+import useBreakpoint from '../../hooks/useBreakpoint';
+import Title from '../MantineCores/Title';
+import Text from '../MantineCores/Text';
 
 interface Data {
   icon: any;
@@ -13,6 +16,7 @@ interface cardSelectProps {
 
 export default function CardSelectInfo({ data }: cardSelectProps) {
   const theme = useMantineTheme();
+  const { isDesktop } = useBreakpoint();
 
   return (
     <>
@@ -25,7 +29,7 @@ export default function CardSelectInfo({ data }: cardSelectProps) {
               background: 'transparent',
 
               height: 240,
-              width: 624,
+              width: isDesktop ? 624 : 672,
 
               padding: 0,
 
@@ -42,10 +46,6 @@ export default function CardSelectInfo({ data }: cardSelectProps) {
 
               '&[data-checked]:not([data-disabled])': {
                 border: `2px solid ${item.color}`,
-              },
-
-              [theme.fn.smallerThan('1440')]: {
-                width: 672,
               },
             },
 
@@ -67,12 +67,8 @@ export default function CardSelectInfo({ data }: cardSelectProps) {
               <item.icon />
             </Center>
             <Stack spacing={8} align="center">
-              <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]}>
-                {item.title}
-              </Text>
-              <Text fw={400} fz={14} lh="24px" c={theme.colors.darkText[0]}>
-                {item.des}
-              </Text>
+              <Title order={3}>{item.title}</Title>
+              <Text>{item.des}</Text>
             </Stack>
           </Stack>
         </Chip>

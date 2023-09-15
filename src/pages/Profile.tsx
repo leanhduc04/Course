@@ -1,7 +1,8 @@
-import { Box, Center, Group, ScrollArea, Stack, Text, useMantineTheme } from '@mantine/core';
-import { useMediaQuery, useViewportSize } from '@mantine/hooks';
+import { Box, Center, Group, ScrollArea, Stack } from '@mantine/core';
+import { useViewportSize } from '@mantine/hooks';
 import BaseLayout from '../containers/BaseLayout';
 import Title from '../components/MantineCores/Title';
+import Text from '../components/MantineCores/Text';
 import RightLayout from '../containers/RightLayout';
 import GroupLinkIcon from '../components/MyComponents/GroupLinkIcon';
 import HistoryBack from '../components/MyComponents/HistoryBack';
@@ -11,16 +12,13 @@ import LinkIcon from '../components/MyComponents/LinkIcon';
 import IconRight from '../assets/Icon/IconRight';
 import NextImage from '../components/MyComponents/NextImage';
 import Badge from '../components/MantineCores/Badge';
+import useBreakpoint from '../hooks/useBreakpoint';
 import { dataUser } from '../constants/dataUser.constant';
 import { dataSetting } from '../constants/dataSetting.constant';
 import { dataAchieve } from '../constants/dataAchieve.constant';
 
 export default function Profile() {
-  const theme = useMantineTheme();
-
-  const isDesktop = useMediaQuery('(min-width: 1440px)', true, {
-    getInitialValueInEffect: false,
-  });
+  const { isTablet, isDesktop } = useBreakpoint();
 
   const { height } = useViewportSize();
 
@@ -34,11 +32,11 @@ export default function Profile() {
         <Group position="apart">
           <Title>Profile ✨</Title>
           <GroupLinkIcon />
-          <Box sx={{ display: 'none', [theme.fn.smallerThan('1440')]: { display: 'flex' } }}>
+          {isTablet && (
             <LinkIcon href="/achieve" smallIcon>
               <IconRight />
             </LinkIcon>
-          </Box>
+          )}
         </Group>
         <Stack spacing={32} align="center">
           <Center sx={{ position: 'relative' }} h={218}>
@@ -55,22 +53,16 @@ export default function Profile() {
           </Center>
           <Stack spacing={6}>
             <Group spacing={0} position="center">
-              <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
-                {dataUser.name}
-              </Text>
-              <Text fw={600} fz={24} lh="32px">
-                💯
-              </Text>
+              <Title order={2}>{dataUser.name}</Title>
+              <Title order={2}>💯</Title>
             </Group>
-            <Text fw={400} fz={16} lh="26px" c={theme.colors.darkText[1]} ta="center">
+            <Text fz={16} lh="26px" ta="center">
               {dataUser.email}
             </Text>
           </Stack>
         </Stack>
         <Stack spacing={32}>
-          <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
-            Settings ⚙️
-          </Text>
+          <Title order={2}>Settings ⚙️</Title>
           <ScrollArea h={heightChildren} styles={{ scrollbar: { display: 'none' } }}>
             <Stack spacing={32}>
               <CardSetting data={dataSetting} />
@@ -78,12 +70,14 @@ export default function Profile() {
           </ScrollArea>
         </Stack>
       </Stack>
-      <Stack spacing={48} sx={{ [theme.fn.smallerThan('1440')]: { display: 'none' } }}>
-        <HistoryBack />
-        <RightLayout title="Achievements 🏆">
-          <CardAchieve data={dataAchieve} />
-        </RightLayout>
-      </Stack>
+      {isDesktop && (
+        <Stack spacing={48}>
+          <HistoryBack />
+          <RightLayout title="Achievements 🏆">
+            <CardAchieve data={dataAchieve} />
+          </RightLayout>
+        </Stack>
+      )}
     </BaseLayout>
   );
 }

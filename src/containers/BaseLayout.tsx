@@ -1,32 +1,27 @@
 import React from 'react';
-import { SimpleGrid, useMantineTheme } from '@mantine/core';
+import { SimpleGrid } from '@mantine/core';
 import Navbar from '../components/MyComponents/Navbar';
+import useBreakpoint from '../hooks/useBreakpoint';
 
 export default function BaseLayout({ children }: { children: React.ReactNode }) {
-  const theme = useMantineTheme();
+  const { isDesktop } = useBreakpoint();
 
   return (
     <SimpleGrid
-      spacing={64}
       maw={1440}
       mx="auto"
       sx={{
-        gridTemplateColumns: '304px 1fr',
-        padding: '64px 64px 0',
-        [theme.fn.smallerThan('1440')]: {
-          width: 768,
-          gridTemplateColumns: '120px 1fr',
-          padding: '48px 48px 0',
-          gap: 62,
-        },
+        gridTemplateColumns: isDesktop ? '304px 1fr' : '120px 1fr',
+        gap: isDesktop ? 64 : 62,
+        padding: isDesktop ? '64px 64px 0' : '48px 48px 0',
+        width: isDesktop ? 'auto' : 768,
       }}
     >
       <Navbar />
       <SimpleGrid
         spacing={64}
         sx={{
-          gridTemplateColumns: '1fr 390px',
-          [theme.fn.smallerThan('1440')]: { gridTemplateColumns: 'repeat(1, 1fr)' },
+          gridTemplateColumns: isDesktop ? '1fr 390px' : 'repeat(1, 1fr)',
         }}
       >
         {children}

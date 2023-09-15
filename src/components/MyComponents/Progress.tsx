@@ -1,4 +1,5 @@
-import { Progress as MantineProgress, SimpleGrid, Text, useMantineTheme } from '@mantine/core';
+import { Progress as MantineProgress, SimpleGrid, useMantineTheme } from '@mantine/core';
+import Text from '../MantineCores/Text';
 
 interface progressProps {
   value: number;
@@ -22,7 +23,7 @@ export default function Progress({ value, color }: progressProps) {
           bar: { background: `${color}` },
         }}
       />
-      <Text fw={500} fz={12} lh="16px" c={theme.colors.darkText[0]} ta="right">
+      <Text fw={500} fz={12} lh="16px" type="primary" ta="right">
         {value}%
       </Text>
     </SimpleGrid>

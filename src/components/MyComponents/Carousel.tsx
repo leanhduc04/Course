@@ -1,6 +1,8 @@
 import { Carousel as MantineCarousel } from '@mantine/carousel';
-import { Stack, Text, useMantineTheme } from '@mantine/core';
+import { Stack, useMantineTheme } from '@mantine/core';
 import NextImage from './NextImage';
+import Title from '../MantineCores/Title';
+import Text from '../MantineCores/Text';
 
 export default function Carousel() {
   const theme = useMantineTheme();
@@ -58,13 +60,13 @@ export default function Carousel() {
         <Stack h="100%" align="center" spacing={0}>
           <NextImage src="/imgs/signup1.jpg" alt="picture" width={350} height={350} />
           <Stack spacing={16} align="center">
-            <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
+            <Title order={2}>
               Start Learning{' '}
               <span style={{ textDecoration: `underline ${theme.colors.secondary} 3px` }}>
                 New Skills
               </span>
-            </Text>
-            <Text w={336} fw={400} fz={16} lh="26px" c={theme.colors.darkText[1]} ta="center">
+            </Title>
+            <Text w={336} fz={16} lh="26px" ta="center">
               Learn almost any skill from a comfort of your home with our app.
             </Text>
           </Stack>
@@ -74,13 +76,13 @@ export default function Carousel() {
         <Stack h="100%" align="center" spacing={0}>
           <NextImage src="/imgs/signup2.jpg" alt="picture" width={350} height={350} />
           <Stack spacing={16} align="center">
-            <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
+            <Title order={2}>
               Connect With the{' '}
               <span style={{ textDecoration: `underline ${theme.colors.accent1} 3px` }}>
                 Tutors
               </span>
-            </Text>
-            <Text w={336} fw={400} fz={16} lh="26px" c={theme.colors.darkText[1]} ta="center">
+            </Title>
+            <Text w={336} fz={16} lh="26px" ta="center">
               You can easily connect with thousands of tutors by using our platform.
             </Text>
           </Stack>
@@ -90,13 +92,13 @@ export default function Carousel() {
         <Stack h="100%" align="center" spacing={0}>
           <NextImage src="/imgs/signup3.jpg" alt="picture" width={350} height={350} />
           <Stack spacing={16} align="center">
-            <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
+            <Title order={2}>
               Fully Flexible{' '}
               <span style={{ textDecoration: `underline ${theme.colors.tertiary} 3px` }}>
                 Schedule
               </span>
-            </Text>
-            <Text w={336} fw={400} fz={16} lh="26px" c={theme.colors.darkText[1]} ta="center">
+            </Title>
+            <Text w={336} fz={16} lh="26px" ta="center">
               There is no set schedule and you can learn whenever you want to.
             </Text>
           </Stack>

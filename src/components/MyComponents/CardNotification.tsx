@@ -1,4 +1,8 @@
-import { Center, Highlight, SimpleGrid, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Center, SimpleGrid, Stack, useMantineTheme } from '@mantine/core';
+import useBreakpoint from '../../hooks/useBreakpoint';
+import Title from '../MantineCores/Title';
+import Text from '../MantineCores/Text';
+import Highlight from '../MantineCores/Highlight';
 
 interface Data {
   title: string;
@@ -14,6 +18,7 @@ interface cardNotificationProps {
 
 export default function CardNotification({ data }: cardNotificationProps) {
   const theme = useMantineTheme();
+  const { isDesktop } = useBreakpoint();
 
   return (
     <>
@@ -22,43 +27,21 @@ export default function CardNotification({ data }: cardNotificationProps) {
           key={index}
           spacing={24}
           p={24}
-          w={390}
           h="fit-content"
           sx={{
+            width: isDesktop ? 390 : 490,
             gridTemplateColumns: '64px 1fr',
             borderRadius: 32,
             border: `1px solid ${theme.colors.light[1]}`,
-            [theme.fn.smallerThan('1440')]: {
-              width: 490,
-            },
           }}
         >
           <Center w={64} h={64} sx={{ background: `${item.colorIcon}`, borderRadius: '50%' }}>
             <item.icon />
           </Center>
           <Stack spacing={0}>
-            <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]}>
-              {item.title}
-            </Text>
-            <Highlight
-              pt={6}
-              pb={10}
-              fw={400}
-              fz={14}
-              lh="24px"
-              c={theme.colors.darkText[1]}
-              highlight={['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']}
-              highlightStyles={{
-                fontWeight: 600,
-                background: 'transparent',
-                color: theme.colors.darkText[0],
-              }}
-            >
-              {item.des}
-            </Highlight>
-            <Text fw={400} fz={14} lh="24px" c={theme.colors.darkText[1]}>
-              {item.time}
-            </Text>
+            <Title order={3}>{item.title}</Title>
+            <Highlight highlight={[]}>{item.des}</Highlight>
+            <Text>{item.time}</Text>
           </Stack>
         </SimpleGrid>
       ))}

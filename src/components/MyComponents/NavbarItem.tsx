@@ -1,6 +1,7 @@
 import { Group, Text, useMantineTheme } from '@mantine/core';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import useBreakpoint from '../../hooks/useBreakpoint';
 
 interface Data {
   icon: any;
@@ -15,6 +16,7 @@ interface NavbarItem {
 export function NavbarItem({ data }: NavbarItem) {
   const { pathname } = useRouter();
   const theme = useMantineTheme();
+  const { isDesktop } = useBreakpoint();
 
   return (
     <>
@@ -29,15 +31,16 @@ export function NavbarItem({ data }: NavbarItem) {
             }}
           >
             <item.icon />
-            <Text
-              fw={item.href === pathname ? 600 : 400}
-              fz={16}
-              lh="24px"
-              c={item.href === pathname ? theme.colors.darkText[0] : theme.colors.darkText[1]}
-              sx={{ [theme.fn.smallerThan('1440')]: { display: 'none' } }}
-            >
-              {item.label}
-            </Text>
+            {isDesktop && (
+              <Text
+                fw={item.href === pathname ? 600 : 400}
+                fz={16}
+                lh="24px"
+                c={item.href === pathname ? theme.colors.darkText[0] : theme.colors.darkText[1]}
+              >
+                {item.label}
+              </Text>
+            )}
           </Group>
         </Link>
       ))}

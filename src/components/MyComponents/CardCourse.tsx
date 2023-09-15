@@ -1,7 +1,9 @@
-import { Card, Text, useMantineTheme } from '@mantine/core';
+import { Card, useMantineTheme } from '@mantine/core';
 import Link from 'next/link';
 
 import NextImage from './NextImage';
+import Title from '../MantineCores/Title';
+import Text from '../MantineCores/Text';
 
 interface Data {
   src: string;
@@ -31,15 +33,11 @@ export default function CardCourse({ data }: cardCourseProps) {
             <Card.Section mx={-24} sx={{ '&[data-first]': { marginTop: -24 } }}>
               <NextImage src={item.src} alt="course" height={137} />
             </Card.Section>
-            <Text fw={400} fz={14} lh="24px" c={theme.colors.darkText[1]} pt={24}>
-              -{item.time}
-            </Text>
-            <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]} pt={2} pb={6}>
+            <Text pt={24}>-{item.time}</Text>
+            <Title order={3} pt={2} pb={6}>
               {item.title}
-            </Text>
-            <Text fw={400} fz={14} lh="24px" c={theme.colors.darkText[1]}>
-              {item.des}
-            </Text>
+            </Title>
+            <Text>{item.des}</Text>
           </Card>
         </Link>
       ))}

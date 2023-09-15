@@ -1,5 +1,8 @@
-import { Center, Highlight, SimpleGrid, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Center, SimpleGrid, Stack, useMantineTheme } from '@mantine/core';
 import Progress from './Progress';
+import useBreakpoint from '../../hooks/useBreakpoint';
+import Title from '../MantineCores/Title';
+import Highlight from '../MantineCores/Highlight';
 
 interface Data {
   title: string;
@@ -16,6 +19,7 @@ interface cardAchieveProps {
 
 export default function CardAchieve({ data }: cardAchieveProps) {
   const theme = useMantineTheme();
+  const { isDesktop } = useBreakpoint();
 
   return (
     <>
@@ -24,15 +28,12 @@ export default function CardAchieve({ data }: cardAchieveProps) {
           key={index}
           spacing={24}
           p={24}
-          w={390}
           h="fit-content"
           sx={{
+            width: isDesktop ? 390 : 490,
             gridTemplateColumns: '64px 1fr',
             borderRadius: 32,
             border: `1px solid ${theme.colors.light[1]}`,
-            [theme.fn.smallerThan('1440')]: {
-              width: 490,
-            },
           }}
         >
           <Center w={64} h={64} sx={{ background: `${item.colorIcon}`, borderRadius: '50%' }}>
@@ -40,23 +41,8 @@ export default function CardAchieve({ data }: cardAchieveProps) {
           </Center>
           <Stack spacing={24}>
             <Stack spacing={6}>
-              <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]}>
-                {item.title}
-              </Text>
-              <Highlight
-                fw={400}
-                fz={14}
-                lh="24px"
-                c={theme.colors.darkText[1]}
-                highlight={['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']}
-                highlightStyles={{
-                  fontWeight: 600,
-                  background: 'transparent',
-                  color: theme.colors.darkText[0],
-                }}
-              >
-                {item.des}
-              </Highlight>
+              <Title order={3}>{item.title}</Title>
+              <Highlight highlight={[]}>{item.des}</Highlight>
             </Stack>
             <Progress value={item.valueProgress} color={item.colorProgress} />
           </Stack>

@@ -4,10 +4,9 @@ import {
   ScrollArea,
   SimpleGrid,
   Stack,
-  Text,
   useMantineTheme,
 } from '@mantine/core';
-import { useMediaQuery, useViewportSize } from '@mantine/hooks';
+import { useViewportSize } from '@mantine/hooks';
 import Link from 'next/link';
 import BaseLayout from '../containers/BaseLayout';
 import HistoryBack from '../components/MyComponents/HistoryBack';
@@ -19,15 +18,15 @@ import Button from '../components/MantineCores/Button';
 import IconRight from '../assets/Icon/IconRight';
 import LinkIcon from '../components/MyComponents/LinkIcon';
 import IconBell from '../assets/Icon/IconBell';
+import Text from '../components/MantineCores/Text';
+import Title from '../components/MantineCores/Title';
+import useBreakpoint from '../hooks/useBreakpoint';
 import { dataSelect } from '../constants/dataSelect.constant';
 import { dataCourse } from '../constants/dataCourse.constant';
 
 export default function Search() {
   const theme = useMantineTheme();
-
-  const isDesktop = useMediaQuery('(min-width: 1440px)', true, {
-    getInitialValueInEffect: false,
-  });
+  const { isDesktop } = useBreakpoint();
 
   const { height } = useViewportSize();
 
@@ -35,22 +34,22 @@ export default function Search() {
 
   return (
     <BaseLayout>
-      <Stack spacing={48} sx={{ [theme.fn.smallerThan('1440')]: { display: 'none' } }}>
-        <Group spacing={32}>
-          <HistoryBack />
-          <SearchInput />
-        </Group>
-        <Stack spacing={32}>
-          <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
-            Search Results 🔍
-          </Text>
-          <ScrollArea h={heightChildren} styles={{ scrollbar: { display: 'none' } }}>
-            <SimpleGrid spacing={32} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-              <CardCourse data={dataCourse.slice(5, 11)} />
-            </SimpleGrid>
-          </ScrollArea>
+      {isDesktop && (
+        <Stack spacing={48}>
+          <Group spacing={32}>
+            <HistoryBack />
+            <SearchInput />
+          </Group>
+          <Stack spacing={32}>
+            <Title order={2}>Search Results 🔍</Title>
+            <ScrollArea h={heightChildren} styles={{ scrollbar: { display: 'none' } }}>
+              <SimpleGrid spacing={32} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+                <CardCourse data={dataCourse.slice(5, 11)} />
+              </SimpleGrid>
+            </ScrollArea>
+          </Stack>
         </Stack>
-      </Stack>
+      )}
       <Stack spacing={48}>
         {isDesktop ? (
           <Stack align="flex-end">
@@ -65,12 +64,10 @@ export default function Search() {
           </Group>
         )}
         <Stack spacing={32}>
-          <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]}>
-            Search Filters 🗂️
-          </Text>
+          <Title order={2}>Search Filters 🗂️</Title>
           <Stack spacing={48}>
             <Stack spacing={32}>
-              <Text fw={400} fz={16} lh="24px" c={theme.colors.darkText[0]}>
+              <Text fz={16} type="primary">
                 Category
               </Text>
               <MantineChip.Group>
@@ -80,7 +77,7 @@ export default function Search() {
               </MantineChip.Group>
             </Stack>
             <Stack spacing={32}>
-              <Text fw={400} fz={16} lh="24px" c={theme.colors.darkText[0]}>
+              <Text fz={16} type="primary">
                 Duration
               </Text>
               <MantineChip.Group>
@@ -101,7 +98,7 @@ export default function Search() {
               </MantineChip.Group>
             </Stack>
             <Stack spacing={32}>
-              <Text fw={400} fz={16} lh="24px" c={theme.colors.darkText[0]}>
+              <Text fz={16} type="primary">
                 Type
               </Text>
               <MantineChip.Group>
@@ -119,11 +116,7 @@ export default function Search() {
         </Stack>
         <Stack spacing={24}>
           {isDesktop ? (
-            <Button
-              variant="filled"
-              rightIcon={<IconRight />}
-              sx={{ [theme.fn.smallerThan('1440')]: { display: 'none' } }}
-            >
+            <Button variant="filled" rightIcon={<IconRight />}>
               Apply Filters
             </Button>
           ) : (
@@ -132,10 +125,8 @@ export default function Search() {
                 variant="filled"
                 rightIcon={<IconRight />}
                 sx={{
-                  display: 'none',
                   width: '100%',
                   justifyContent: 'center',
-                  [theme.fn.smallerThan('1440')]: { display: 'flex' },
                 }}
               >
                 Apply Filters

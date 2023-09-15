@@ -1,4 +1,6 @@
-import { Center, Highlight, SimpleGrid, Stack, Text, useMantineTheme } from '@mantine/core';
+import { Center, SimpleGrid, Stack, useMantineTheme } from '@mantine/core';
+import Title from '../MantineCores/Title';
+import Highlight from '../MantineCores/Highlight';
 
 interface Data {
   title: string;
@@ -33,23 +35,10 @@ export default function CardSetting({ data }: cardSettingProps) {
             <item.icon />
           </Center>
           <Stack spacing={6}>
-            <Text fw={600} fz={20} lh="32px" c={theme.colors.darkText[0]}>
+            <Title order={3}>
               {item.title}
-            </Text>
-            <Highlight
-              fw={400}
-              fz={14}
-              lh="24px"
-              c={theme.colors.darkText[1]}
-              highlight={['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']}
-              highlightStyles={{
-                fontWeight: 600,
-                background: 'transparent',
-                color: theme.colors.darkText[0],
-              }}
-            >
-              {item.des}
-            </Highlight>
+            </Title>
+            <Highlight highlight={[]}>{item.des}</Highlight>
           </Stack>
         </SimpleGrid>
       ))}

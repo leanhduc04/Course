@@ -6,17 +6,15 @@ import {
   Text,
   useMantineTheme,
 } from '@mantine/core';
-import { useMediaQuery, useViewportSize } from '@mantine/hooks';
+import { useViewportSize } from '@mantine/hooks';
 import CardCourse from '../components/MyComponents/CardCourse';
 import { dataCourse } from '../constants/dataCourse.constant';
 import { dataSelect } from '../constants/dataSelect.constant';
+import useBreakpoint from '../hooks/useBreakpoint';
 
 export default function Tabs() {
   const theme = useMantineTheme();
-
-  const isDesktop = useMediaQuery('(min-width: 1440px)', true, {
-    getInitialValueInEffect: false,
-  });
+  const { isDesktop } = useBreakpoint();
   const { height } = useViewportSize();
 
   const heightChildren = isDesktop

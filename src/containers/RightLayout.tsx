@@ -1,6 +1,8 @@
 import React from 'react';
-import { ScrollArea, Stack, Text, useMantineTheme } from '@mantine/core';
-import { useMediaQuery, useViewportSize } from '@mantine/hooks';
+import { ScrollArea, Stack } from '@mantine/core';
+import { useViewportSize } from '@mantine/hooks';
+import useBreakpoint from '../hooks/useBreakpoint';
+import Title from '../components/MantineCores/Title';
 
 interface rightLayoutProps {
   title: string;
@@ -8,10 +10,7 @@ interface rightLayoutProps {
 }
 
 export default function RightLayout({ title, children }: rightLayoutProps) {
-  const theme = useMantineTheme();
-  const isDesktop = useMediaQuery('(min-width: 1440px)', true, {
-    getInitialValueInEffect: false,
-  });
+  const { isDesktop } = useBreakpoint();
   const { height } = useViewportSize();
 
   const heightChildren = isDesktop
@@ -20,9 +19,7 @@ export default function RightLayout({ title, children }: rightLayoutProps) {
 
   return (
     <Stack spacing={32}>
-      <Text fw={600} fz={24} lh="32px" c={theme.colors.darkText[0]}>
-        {title}
-      </Text>
+      <Title order={2}>{title}</Title>
       <ScrollArea h={heightChildren} styles={{ scrollbar: { display: 'none' } }}>
         <Stack spacing={32}>{children}</Stack>
       </ScrollArea>
