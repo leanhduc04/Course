@@ -6,20 +6,12 @@ import {
   Text,
   useMantineTheme,
 } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
 import CardCourse from '../components/MyComponents/CardCourse';
 import { dataCourse } from '../constants/dataCourse.constant';
 import { dataSelect } from '../constants/dataSelect.constant';
-import useBreakpoint from '../hooks/useBreakpoint';
 
 export default function Tabs() {
   const theme = useMantineTheme();
-  const { isDesktop } = useBreakpoint();
-  const { height } = useViewportSize();
-
-  const heightChildren = isDesktop
-    ? height - 64 - 80 - 48 - 32 - 32 - 130 - 48
-    : height - 48 - 80 - 48 - 32 - 32 - 130 - 48;
 
   const renderTab = dataSelect.map((item, index) => (
     <MantineTabs.Tab key={index} value={item.value}>
@@ -81,7 +73,7 @@ export default function Tabs() {
         },
 
         panel: {
-          height: heightChildren,
+          height: 500,
           overflowY: 'scroll',
           '::-webkit-scrollbar': {
             display: 'none',

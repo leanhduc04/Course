@@ -21,7 +21,7 @@ export function NavbarItem({ data }: NavbarItem) {
   return (
     <>
       {data.map((item, index) => (
-        <Link key={index} href={item.href} passHref style={{ textDecoration: 'none' }}>
+        <Link key={index} href={item.href} style={{ textDecoration: 'none' }}>
           <Group
             spacing={16}
             sx={{

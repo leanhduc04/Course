@@ -11,11 +11,11 @@ import useBreakpoint from '../hooks/useBreakpoint';
 import { dataNotification } from '../constants/dataNotification';
 
 export default function Notification() {
-  const { isTablet } = useBreakpoint();
+  const { isDesktop } = useBreakpoint();
 
   return (
     <BaseLayout>
-      {isTablet && (
+      {isDesktop && (
         <Stack spacing={48}>
           <Group position="apart">
             <Stack spacing={8}>

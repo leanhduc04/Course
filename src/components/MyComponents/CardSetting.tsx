@@ -35,9 +35,7 @@ export default function CardSetting({ data }: cardSettingProps) {
             <item.icon />
           </Center>
           <Stack spacing={6}>
-            <Title order={3}>
-              {item.title}
-            </Title>
+            <Title order={3}>{item.title}</Title>
             <Highlight highlight={[]}>{item.des}</Highlight>
           </Stack>
         </SimpleGrid>

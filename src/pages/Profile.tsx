@@ -1,5 +1,4 @@
 import { Box, Center, Group, ScrollArea, Stack } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
 import BaseLayout from '../containers/BaseLayout';
 import Title from '../components/MantineCores/Title';
 import Text from '../components/MantineCores/Text';
@@ -20,17 +19,11 @@ import { dataAchieve } from '../constants/dataAchieve.constant';
 export default function Profile() {
   const { isTablet, isDesktop } = useBreakpoint();
 
-  const { height } = useViewportSize();
-
-  const heightChildren = isDesktop
-    ? height - 64 - 48 - 410 - 32 - 32
-    : height - 48 - 48 - 410 - 32 - 32;
-
   return (
     <BaseLayout>
       <Stack spacing={48}>
         <Group position="apart">
-          <Title>Profile ✨</Title>
+          <Title order={1}>Profile ✨</Title>
           <GroupLinkIcon />
           {isTablet && (
             <LinkIcon href="/achieve" smallIcon>
@@ -63,7 +56,7 @@ export default function Profile() {
         </Stack>
         <Stack spacing={32}>
           <Title order={2}>Settings ⚙️</Title>
-          <ScrollArea h={heightChildren} styles={{ scrollbar: { display: 'none' } }}>
+          <ScrollArea h={350} styles={{ scrollbar: { display: 'none' } }}>
             <Stack spacing={32}>
               <CardSetting data={dataSetting} />
             </Stack>

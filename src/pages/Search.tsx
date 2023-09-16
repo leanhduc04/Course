@@ -6,7 +6,6 @@ import {
   Stack,
   useMantineTheme,
 } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
 import Link from 'next/link';
 import BaseLayout from '../containers/BaseLayout';
 import HistoryBack from '../components/MyComponents/HistoryBack';
@@ -28,10 +27,6 @@ export default function Search() {
   const theme = useMantineTheme();
   const { isDesktop } = useBreakpoint();
 
-  const { height } = useViewportSize();
-
-  const heightChildren = height - 64 - 48 - 48 - 32 - 32;
-
   return (
     <BaseLayout>
       {isDesktop && (
@@ -42,7 +37,7 @@ export default function Search() {
           </Group>
           <Stack spacing={32}>
             <Title order={2}>Search Results 🔍</Title>
-            <ScrollArea h={heightChildren} styles={{ scrollbar: { display: 'none' } }}>
+            <ScrollArea h={700} styles={{ scrollbar: { display: 'none' } }}>
               <SimpleGrid spacing={32} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
                 <CardCourse data={dataCourse.slice(5, 11)} />
               </SimpleGrid>

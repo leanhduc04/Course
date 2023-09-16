@@ -32,10 +32,8 @@ export default function Navbar() {
   const { isDesktop } = useBreakpoint();
   const { height } = useViewportSize();
 
-  const heightChildren = isDesktop ? height - 64 : height - 48;
-
   return (
-    <ScrollArea h={heightChildren} styles={{ scrollbar: { display: 'none' } }}>
+    <ScrollArea h={height - 64} styles={{ scrollbar: { display: 'none' } }}>
       <MantineNavbar
         sx={{
           zIndex: 0,
